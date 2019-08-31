@@ -2,7 +2,7 @@
 # https://leetcode.com/problems/valid-parentheses/
 
 class Solution:
-    def convertToRight(self, s: str) -> str:
+    def convertRight(self, s: str) -> str:
         if s == "}":
             return "{"
         elif s == ")":
@@ -17,7 +17,7 @@ class Solution:
             if (i == "{" or i == "[" or i == "("):
                 stack += i
             else:
-                if (len(stack)==0 or stack.pop() != self.convertToRight(i)):
+                if (len(stack)==0 or stack.pop() != self.convertRight(i)):
                     return 0
         
         if len(stack) == 0:
