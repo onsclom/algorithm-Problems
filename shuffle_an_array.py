@@ -1,16 +1,15 @@
-import random
-
 class Solution:
 
     def __init__(self, nums: List[int]):
         self.original = list(nums)
-        self.new = list(nums)
+        self.current = nums
 
     def reset(self) -> List[int]:
-        self.new=list(self.original)
+        self.new = list(self.original)
         return list(self.new)
-        
 
     def shuffle(self) -> List[int]:
-        random.shuffle(self.new)
-        return list(self.new)
+        for x in range(len(self.current)):
+            randIndex = random.randrange(0, len(self.current))
+            self.current[x], self.current[randIndex] = self.current[randIndex], self.current[x]
+        return list(self.current)
