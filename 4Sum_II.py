@@ -1,5 +1,6 @@
 # 4sum_ii  on leetcode
 # https://leetcode.com/problems/4sum-ii/
+from typing import *
 
 class Solution:
     def fourSumCount(self, A: List[int], B: List[int], C: List[int], D: List[int]) -> int:
