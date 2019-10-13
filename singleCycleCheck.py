@@ -1,13 +1,18 @@
 def hasSingleCycle(array):
-    seen = set()
+    numsVisited = 0
 	
-	cur = 0
+    cur = 0
 	
-	while cur not in seen:
-		seen.add(cur)
-		cur = (cur+array[cur])%len(array)
+    while numsVisited < len(array):
 		
-	if len(seen) == len(array) and cur == 0:
-		return True
+        if numsVisited > 0 and cur == 0:
+            return False
+		
+        cur = (cur+array[cur])%len(array)
+		
+        numsVisited += 1
+		
+    if cur == 0:
+    	return True
 
-	return False
+    return False
